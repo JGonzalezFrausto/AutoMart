@@ -2,14 +2,21 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    nombre = "VW Jetta"
-    modelo = 2018
-    precio = currency_converter(153000)
-    color = "Gris"
 
-    dict = { 'auto_nombre' :  nombre , 'auto_modelo' : modelo , 'auto_precio' : precio , 'auto_color' : color
- 
-    }
-    
-    return render( request, 'index.html', dict)
+    return render( request, 'index.html', {'autos' : autos})
 
+class Auto:
+    def __init__ (self, nombre, modelo , precio , color):
+        self.nombre = nombre
+        self.modelo = modelo
+        self.precio = precio
+        self.color = color
+
+autos = [ 
+    Auto("VW Jetta", 2018 , 125000 , "Gris"),
+    Auto("Lexus", 2018 , 256000 , "Rojo"),
+    Auto("Futura", 1954 , 0 , "Aqua"),
+    Auto("Porsche", 2010 , 250000 , "Azul"),
+    Auto("VW GOL", 2018 , 175000 , "Azul")
+
+]

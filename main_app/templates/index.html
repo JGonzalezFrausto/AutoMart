@@ -1,15 +1,25 @@
+{%load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
     <title>Automart, titulo de ventana </title>
+    <link rel = "stylesheet" type="text/css" href="{% static 'estilos.css' %}" />
 </head>
 <body>
     <h1>Bienvenido a Automart prueba en tiempo real </h1>
-    <p>{{ auto_nombre }} </p>
-    <p>{{ auto_modelo }} </p>
-    <p>{{ auto_precio }} </p>
-    <p>{{ auto_color }} </p>
+    {% for auto in autos %}
 
+        {% if auto.precio == 0 %}
+            <p> No se vende ni se toca </p>
+        {%else%}
+            <p>{{ auto.nombre }} </p>
+            <p>{{ auto.modelo }} </p>      
+            <p>{{ auto.precio }} </p>
+            <p>{{ auto.color }} </p>
+        <hr />
+        {%endif%}
+        
+    {% endfor %}
 </body>
 </html>
