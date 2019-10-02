@@ -1,8 +1,16 @@
 h1 {
-    color: brown; 
+  color: brown;
 }
 
-.image_auto {
-    max-width: 100%;
-    
+.auto-picture {
+  max-width: 100%;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
